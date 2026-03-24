@@ -27,9 +27,7 @@
 - `data/`: 原始气象预报与实际功率数据。
 - `notebooks/`: 探索性数据分析（EDA）、特征相关性矩阵与风功率曲线截断分析。
 - `src/`:
-  - `data_pipeline.py`: 统一特征工程与严格时序切分（Train/Val/Test）。
   - `models/`: 包含 LightGBM, LSTM 及 Baseline 的核心训练脚本。
-  - `evaluate.py`: 统一读取各模型预测结果并计算战绩榜。
 - `results/`: 存放各模型输出的预测 CSV 及特征重要性图表。
 
 ## 💻 快速运行
@@ -72,9 +70,7 @@ Evaluated on a 30-day future set (GEFCom2014 Wind Track data).
 - `data/`: Raw NWP and power datasets (ignored via `.gitignore`).
 - `notebooks/`: Comprehensive EDA, Feature Importance, and Power Curve non-linear analysis.
 - `src/`:
-  - `data_pipeline.py`: Unified feature engineering and temporal Train/Val/Test splitting.
   - `models/`: Implementations of LightGBM, LSTM, and Baseline.
-  - `evaluate.py`: Standardized Pinball Loss evaluation.
 - `results/`: Output predictions and feature importance plots.
 
 ## 💻 Quick Start
