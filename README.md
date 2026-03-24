@@ -33,12 +33,12 @@
 - `results/`: 存放各模型输出的预测 CSV 及特征重要性图表。
 
 ## 💻 快速运行
-
+```bash
 pip install -r requirements.txt
 python src/data_pipeline.py
 python src/models/lgbm_model.py
 python src/evaluate.py
-
+```
 
 
 # Wind_Power_Forecaster
