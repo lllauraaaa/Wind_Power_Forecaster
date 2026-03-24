@@ -10,15 +10,11 @@ The modeling pipeline leverages the authoritative **GEFCom2014 Wind Track** data
 
 ## Feature Engineering: A Purely Statistical Approach
 
-Instead of relying on rigid aerodynamic mechanics, I adopted a data-driven, statistical approach to uncover critical non-linear relationships:
-
 - **Polynomial Kinematics (`WS_100_cubed`)**: Engineered the cube of wind speed ($v^3$). Pearson correlation analysis and mutual information confirmed its statistical dominance in capturing the theoretical kinetic energy formula, without imposing strict physical bounds.
 - **Cyclical Trigonometric Encoding**: Transformed `WindDirection` (0°-360°) and `Timestamp` (Hour, Month) into continuous spatial features using `sine` and `cosine` projections. This elegant technique completely eliminates the numerical discontinuity at midnight (23h to 0h) and naturally captures **thermodynamic diurnal patterns** (e.g., thermal convection vs. nocturnal low-level jets).
 - **Vertical Wind Profile**: Incorporated NWP data from both 10m and 100m heights to implicitly allow the models to derive atmospheric stability and the wind shear index.
 
 ## Methodology & Architecture
-
-The project employs a modular, enterprise-grade pipeline (`src/data_pipeline.py` -> `src/models/` -> `src/evaluate.py`). I designed a progressive modeling strategy to validate the necessity of non-linear architectures:
 
 1. **Statistical Baseline (`statsmodels`)**: **Linear Quantile Regression**. Established the baseline Pinball Loss. It struggled to fit the truncated power curves (e.g., constant power at rated speed).
 2. **Core ML (`LightGBM`)**: **Gradient Boosting with Quantile Objective**. Directly optimized for the asymmetric loss. Captured the non-linear "hard thresholds" perfectly.
