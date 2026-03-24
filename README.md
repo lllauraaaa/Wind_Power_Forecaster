@@ -10,7 +10,7 @@
 本项目采用**分位数回归（Quantile Regression）**输出 P10（保底）、P50（中性）、P90（乐观）发电量概率分布，为量化交易算法提供核心的风险约束，从而最大化期望报价利润。
 
 ## 🚀 核心技术亮点
-- **物理机理与统计学融合**：通过三角函数（Sin/Cos）对时间与风向进行连续性编码以捕获热力学日内模式；引入风速多项式特征（$v^3$）以贴合动力学能量转换。
+- **物理机理与统计学融合**：通过三角函数（sin/cos）对时间与风向进行连续性编码以捕获热力学日内模式；引入风速多项式特征（$v^3$）以贴合动力学能量转换。
 - **多范式对比架构**：独立实现了线性基准（`statsmodels`）、深度序列模型（`PyTorch LSTM`），以及非线性树模型（`LightGBM`）。
 
 ## 📊 性能表现 (Out-of-Time 严格盲测)
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 python src/data_pipeline.py
 python src/models/lgbm_model.py
 python src/evaluate.py
-
+```bash
 
 
 # Wind_Power_Forecaster
