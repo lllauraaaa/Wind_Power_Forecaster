@@ -1,0 +1,64 @@
+🚀 开始训练 Baseline (Linear Quantile Regression)...
+拟合分位数 q=0.1 ...
+q=0.1 模型特征系数:
+WS_100_cubed    0.150041
+WS_10_cubed     0.044444
+WS_10           0.035623
+WS_100          0.023636
+WD_10_sin       0.003154
+WD_100_cos      0.002881
+Month_cos       0.001589
+Hour_cos        0.001443
+WD_10_cos       0.000918
+WD_100_sin      0.000827
+Hour_sin        0.000248
+Month_sin       0.000173
+dtype: float64
+拟合分位数 q=0.5 ...
+q=0.5 模型特征系数:
+WS_100_cubed    0.234470
+WS_10_cubed     0.133936
+WS_10           0.121495
+WD_10_cos       0.027034
+WD_100_sin      0.020725
+WD_100_cos      0.016450
+WS_100          0.011170
+WD_10_sin       0.008221
+Month_cos       0.007972
+Hour_sin        0.005611
+Month_sin       0.003688
+Hour_cos        0.000186
+dtype: float64
+拟合分位数 q=0.9 ...
+q=0.9 模型特征系数:
+WS_10           0.278738
+WS_10_cubed     0.265735
+WS_100_cubed    0.222791
+Month_cos       0.017299
+WS_100          0.017235
+WD_10_cos       0.015360
+WD_100_sin      0.015324
+WD_100_cos      0.010714
+Hour_sin        0.010138
+WD_10_sin       0.006828
+Month_sin       0.006497
+Hour_cos        0.004444
+dtype: float64
+
+--- Baseline 预测完成，Test Set (未来30天) 评估结果 ---
+Pinball Loss (q=0.1): 0.0210
+Pinball Loss (q=0.5): 0.0630
+Pinball Loss (q=0.9): 0.0334
+==> Baseline 平均 Pinball Loss: 0.0391
+
+--- Official Benchmark 评估结果 ---
+Official Benchmark Pinball Loss (q=0.1): 0.0252
+Official Benchmark Pinball Loss (q=0.5): 0.0985
+Official Benchmark Pinball Loss (q=0.9): 0.0606
+==> Official Benchmark 平均 Pinball Loss: 0.0614
+
+=========================================================
+官方 Benchmark 平均误差 : 0.0614
+Baseline 平均误差  : 0.0391
+结论: 通过引入气象特征并应用线性分位数回归，预测误差下降了 36.32%。
+=========================================================
