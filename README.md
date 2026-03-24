@@ -13,7 +13,7 @@
 - **物理机理与统计学融合**：通过三角函数（sin/cos）对时间与风向进行连续性编码以捕获热力学日内模式；引入风速多项式特征（$v^3$）以贴合动力学能量转换。
 - **多范式对比架构**：独立实现了线性基准（`statsmodels`）、深度序列模型（`PyTorch LSTM`），以及非线性树模型（`LightGBM`）。
 
-## 📊 性能表现 (Out-of-Time 严格盲测)
+## 📊 性能表现
 在未来 30 天连续时间段上进行预测（基于 GEFCom2014 数据集）。
 **评估指标: 平均 Pinball Loss / 分位数损失** (越低越好)。
 
@@ -33,12 +33,12 @@
 - `results/`: 存放各模型输出的预测 CSV 及特征重要性图表。
 
 ## 💻 快速运行
-```bash
+
 pip install -r requirements.txt
 python src/data_pipeline.py
 python src/models/lgbm_model.py
 python src/evaluate.py
-```bash
+
 
 
 # Wind_Power_Forecaster
