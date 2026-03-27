@@ -7,7 +7,7 @@
 使用范围：本项目采用 Task 15 数据（含 2 年历史训练集及 1 个月的严格时序测试集），以精准模拟现实中的日前交易盲测场景。
 
 ## 📌 项目概述
-本项目采用**分位数回归（Quantile Regression）**输出 P10（保底）、P50（中性）、P90（乐观）发电量概率分布，为量化交易算法提供核心的风险约束，从而最大化期望报价利润。
+本项目采用分位数回归输出 P10（保底）、P50（中性）、P90（乐观）发电量概率分布，为量化交易算法提供核心的风险约束，从而最大化期望报价利润。
 
 ## 🚀 核心技术亮点
 - **物理机理与统计学融合**：通过三角函数（sin/cos）对时间与风向进行连续性编码以捕获热力学日内模式；引入风速多项式特征（$v^3$）以贴合动力学能量转换。
@@ -53,7 +53,7 @@ This system utilizes **Quantile Regression** to output P10, P50, and P90 power s
 - Scope: This project utilizes Task 15 (2 years of historical data for training and 1 month of out-of-time data for blind testing) to simulate real-world day-ahead market scenarios.
 
 ## 🚀 Core Highlights
-- **Physics-Informed Statistical Features**: Implemented trigonometric cyclical encoding for time/wind direction to capture thermodynamic diurnal patterns, and polynomial kinematics ($v^3$) to capture non-linear energy conversion.
+- **Physics-Informed Statistical Features**: Implemented trigonometric cyclical encoding for time/wind direction to capture thermodynamic diurnal patterns, and polynomial kinematics (v^3) to capture non-linear energy conversion.
 - **Multi-Paradigm Architecture**: Evaluated a Linear Baseline (`statsmodels`), a Deep Seq2Seq model (`PyTorch LSTM` with custom tensor Pinball loss), and Non-Linear Tree Ensembles (`LightGBM`).
 
 ## 📊 Performance
